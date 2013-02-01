@@ -55,9 +55,11 @@ Make systemd take notice of it
     systemctl daemon-reload
 
 Activate a service immediately
+
     systemctl start lid-suspend.service
 
 Enable a service to be started on bootup
+
     systemctl enable lid-suspend.service
 
 
