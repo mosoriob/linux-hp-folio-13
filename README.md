@@ -38,15 +38,20 @@ Restart supervisor:
     sudo cp scripts/* /usr/local/sbin
 
 Give it execute permission
+
     chmod u+x /usr/local/sbin/lid-suspend
+    
+Copy systemd configuration 
 
     cp systemd/* /lib/systemd/system/lid-suspend.service
 
 Make symbolic link
+
     cd /etc/systemd/system/
     ln -s /lib/systemd/system/lid-suspend.service lid-suspend.service
 
 Make systemd take notice of it
+    
     systemctl daemon-reload
 
 Activate a service immediately
