@@ -1,0 +1,11 @@
+[Unit]
+Description=Sending radius log to management server
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/suspend-lid-closed.py 
+
+[Install]
+WantedBy=multi-user.target
+

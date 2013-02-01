@@ -15,7 +15,7 @@ INSTRUCTIONS
 
 Suspend on lid-close
 --------------------
-Ubuntu 
+### Ubuntu 
 
 First install supervisor
 
@@ -33,11 +33,28 @@ Restart supervisor:
 
     sudo service supervisor restart
 
-Fedora 18 
+### Fedora 18 
 
     sudo cp scripts/* /usr/local/sbin
-    
-    
+
+Give it execute permission
+    chmod u+x /usr/local/sbin/lid-suspend
+
+    cp systemd/* /lib/systemd/system/lid-suspend.service
+
+Make symbolic link
+    cd /etc/systemd/system/
+    ln -s /lib/systemd/system/lid-suspend.service lid-suspend.service
+
+Make systemd take notice of it
+    systemctl daemon-reload
+
+Activate a service immediately
+    systemctl start lid-suspend.service
+
+Enable a service to be started on bootup
+    systemctl enable lid-suspend.service
+
 
 Brightness Keys
 ---------------
