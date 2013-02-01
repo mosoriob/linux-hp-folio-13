@@ -1,4 +1,6 @@
-Some scripts to make Ubuntu 12.04 on HP Folio 13 a better experience.
+Based on https://github.com/deliciousrobots/ubuntu-hp-folio-13
+
+Some scripts to make Ubuntu 12.04 and Fedora 18 on HP Folio 13 a better experience.
 
 * suspend-lid-closed: checks every 2 seconds to see if lid is closed and suspends
 laptop if it is, fix for https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1010926 .
@@ -13,7 +15,7 @@ INSTRUCTIONS
 
 Suspend on lid-close
 --------------------
-
+Ubuntu 
 
 First install supervisor
 
@@ -30,6 +32,12 @@ Copy the supervisor configs
 Restart supervisor:
 
     sudo service supervisor restart
+
+Fedora 18 
+
+    sudo cp scripts/* /usr/local/sbin
+    
+    
 
 Brightness Keys
 ---------------
